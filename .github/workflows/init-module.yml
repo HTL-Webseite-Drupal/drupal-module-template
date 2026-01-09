@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "master" ]
 
+permissions:
+  contents: write   # <<< DAS IST DER WICHTIGE TEIL
+
 jobs:
   init:
     if: ${{ github.run_number == 1 }}
