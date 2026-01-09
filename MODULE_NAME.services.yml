@@ -1,0 +1,6 @@
+services:
+  MODULE_NAME.example:
+    class: \Drupal\MODULE_NAME\Controller\ModuleNameController
+
+  MODULE_NAME.example_service:
+    class: Drupal\MODULE_NAME\Service\ExampleService

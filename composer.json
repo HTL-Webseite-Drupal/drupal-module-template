@@ -1,0 +1,8 @@
+{
+  "name": "custom/MODULE_NAME",
+  "type": "drupal-module",
+  "description": "Drupal module MODULE_NAME",
+  "require": {
+    "drupal/core": "^10 || ^11"
+  }
+}

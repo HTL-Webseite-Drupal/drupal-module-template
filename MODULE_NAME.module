@@ -1,0 +1,10 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function drupal_module_template_help($route_name, RouteMatchInterface $route_match) {
+
+}

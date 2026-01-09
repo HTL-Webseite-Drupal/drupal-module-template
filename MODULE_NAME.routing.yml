@@ -1,0 +1,6 @@
+MODULE_NAME.api_example:
+  path: '/api/example'
+  defaults:
+    _controller: '\Drupal\MODULE_NAME\Controller\ApiExampleController::handle'
+  requirements:
+    _permission: 'access content'

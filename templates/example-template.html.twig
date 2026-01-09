@@ -1,0 +1,19 @@
+<div class="example-template">
+    <h2>{{ title }}</h2>
+
+    {% if enabled %}
+        <p>Status: enabled</p>
+    {% else %}
+        <p>Status: disabled</p>
+    {% endif %}
+
+
+
+    <button id="example-api-button">
+        Load data via REST
+    </button>
+
+    <div id="example-api-output">
+        No data loaded
+    </div>
+</div>

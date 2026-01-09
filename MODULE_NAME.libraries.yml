@@ -1,0 +1,15 @@
+my_custom_library:
+  js:
+    js/my_custom_library.js: {}
+  css:
+    component:
+      css/my_custom_library.css: { }
+  dependencies:
+    - core/once
+
+example_ajax:
+  js:
+    js/example-ajax.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
