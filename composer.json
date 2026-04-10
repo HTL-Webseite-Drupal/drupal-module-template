@@ -1,8 +1,10 @@
 {
-  "name": "custom/MODULE_NAME",
+  "name": "htl-webseite-drupal/MODULE_NAME",
   "type": "drupal-module",
   "description": "Drupal module MODULE_NAME",
+  "license": "proprietary",
   "require": {
-    "drupal/core": "^10 || ^11"
+    "drupal/core": "^10 || ^11",
+    "htl-webseite-drupal/htl_core": "^1.0"
   }
 }
