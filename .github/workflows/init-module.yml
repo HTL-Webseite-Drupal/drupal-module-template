@@ -26,11 +26,14 @@ jobs:
           find . -depth -name '*MODULE_NAME*' | while read f; do
             mv "$f" "${f//MODULE_NAME/$MODULE_NAME}"
           done
+          find . -depth -name '*ModuleName*' | while read f; do
+            mv "$f" "${f//ModuleName/$MODULE_CLASS}"
+          done
 
       - name: Replace placeholders
         run: |
-          grep -rl MODULE_NAME . | xargs sed -i "s/MODULE_NAME/$MODULE_NAME/g"
-          grep -rl ModuleName . | xargs sed -i "s/ModuleName/$MODULE_CLASS/g"
+          grep -rl --exclude-dir=.git MODULE_NAME . | xargs sed -i "s/MODULE_NAME/$MODULE_NAME/g"
+          grep -rl --exclude-dir=.git ModuleName . | xargs sed -i "s/ModuleName/$MODULE_CLASS/g"
           
       - name: Clean up corrupted git index if present
         run: |

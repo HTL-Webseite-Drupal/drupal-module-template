@@ -95,17 +95,18 @@ jobs:
           git config user.name  "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-      - name: Update version in htl_typegrid.info.yml
+      - name: Update version in module info file
         env:
           NEW_VERSION: ${{ steps.version.outputs.new_version }}
         run: |
-          if [ -f htl_typegrid.info.yml ]; then
-            sed -i "s/^version:.*/version: ${NEW_VERSION}/" htl_typegrid.info.yml
-            git add htl_typegrid.info.yml
+          INFO_FILE=$(find . -maxdepth 1 -name '*.info.yml' | head -n1)
+          if [ -n "$INFO_FILE" ]; then
+            sed -i "s/^version:.*/version: ${NEW_VERSION}/" "$INFO_FILE"
+            git add "$INFO_FILE"
             git commit -m "chore: bump module version to ${NEW_VERSION}"
             git push
           else
-            echo "htl_typegrid.info.yml nicht gefunden – überspringe."
+            echo "No .info.yml found in root – skipping version bump."
           fi
 
       - name: Create annotated tag
