@@ -1,37 +1,28 @@
 # MODULE_NAME
 
-Drupal 10/11 module template.
+HTL child module based on `htl_core`.
 
-This repository is meant as a **learning and reference template**.  
-It contains small, minimal examples of common Drupal concepts:
-
-- Block
-- Controller
-- Service
-- Model
-- Twig template
-- REST API
-- AJAX integration
-
-The module name is automatically initialized from the **repository name**
-when created from the template.
+The module name and all placeholders are automatically replaced from the
+**repository name** on first push (via the GitHub Actions init workflow).
 
 ---
 
-# Overview
+## Structure
 
-This module shows a **minimal but complete Drupal stack**.
-
-The idea is simple:
-- Logic lives in services
-- Data is represented by models
-- Controllers and blocks only connect things
-- Templates only render
-- REST exposes data
-- AJAX consumes REST
-
-Nothing here is complex on purpose.
-
+```
+src/
+  Form/
+    SettingsForm.php        ← extend HtlSettingsFormBase, add your fields here
+  Service/
+    ModuleNameService.php   ← main service, HtlLoggerTrait included
+config/install/
+  MODULE_NAME.settings.yml  ← default config values
+MODULE_NAME.info.yml
+MODULE_NAME.module
+MODULE_NAME.routing.yml     ← settings route under /admin/config/htl/
+MODULE_NAME.links.menu.yml  ← auto-registers in the HTL admin section
+MODULE_NAME.services.yml
+```
 
 ---
 
@@ -39,28 +30,16 @@ Nothing here is complex on purpose.
 
 - Drupal 10 or 11
 - PHP 8.1+
-- Composer
+- `htl_core` enabled
 
 ---
 
-## Documentation
+## Getting started
 
-Detailed explanations can be found in the `docs/` folder:
+1. Create a new repo from this template.
+2. The init workflow replaces all `MODULE_NAME` / `ModuleName` placeholders
+   with the repo name on first push.
+3. Add settings fields in `SettingsForm::buildSettingsForm()`.
+4. Add business logic to `ModuleNameService`.
+5. Log with `$this->htlInfo('MODULE_NAME', 'msg')` anywhere in the service.
 
-1. Overview and architecture
-2. Block example
-3. Controller example
-4. Service example
-5. Model example
-6. Twig template
-7. REST API
-8. AJAX integration
-
-Start with: `docs/00-overview.md`
-
----
-
-## Purpose
-
-This module is **not production-ready**.  
-It is designed to show *how things work*, not *how big systems are built*.

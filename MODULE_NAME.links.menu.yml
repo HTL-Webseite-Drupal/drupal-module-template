@@ -1,0 +1,6 @@
+MODULE_NAME.settings:
+    title: 'MODULE_NAME'
+    description: 'Configure MODULE_NAME settings.'
+    route_name: MODULE_NAME.settings
+    parent: htl_core.admin
+    weight: 10

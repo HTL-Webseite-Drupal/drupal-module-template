@@ -1,6 +1,7 @@
-MODULE_NAME.api_example:
-  path: '/api/example'
-  defaults:
-    _controller: '\Drupal\MODULE_NAME\Controller\ApiExampleController::handle'
-  requirements:
-    _permission: 'access content'
+MODULE_NAME.settings:
+    path: '/admin/config/htl/MODULE_NAME'
+    defaults:
+        _form: '\Drupal\MODULE_NAME\Form\SettingsForm'
+        _title: 'MODULE_NAME'
+    requirements:
+        _permission: 'administer htl settings'

@@ -1,9 +1,8 @@
 name: MODULE_NAME
 type: module
-description: 'Custom Drupal module MODULE_NAME'
+description: 'HTL module MODULE_NAME'
 package: HTL
 core_version_requirement: ^10 || ^11
-version: 0.0.0
 
 dependencies:
   - htl_core:htl_core
